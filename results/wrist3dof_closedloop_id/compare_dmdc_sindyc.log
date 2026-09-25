@@ -1,0 +1,23 @@
+MyoSuite:> Registering Myo Envs
+
+########## DMDc: 322 coeficientes | fit val mín/méd = 60.7/68.2 % | erro rigidez vs MuJoCo = 75 %
+[3] equilíbrio (u_base=0.15) + linearização do SINDYc + síntese H-inf ...
+    u* = {'SUP': np.float64(0.132), 'ECRL': np.float64(0.154), 'ECRB': np.float64(0.162), 'ECU': np.float64(0.183), 'FCR': np.float64(0.093), 'FCU': np.float64(0.087), 'PQ': np.float64(0.162), 'PT': np.float64(0.161)}  (resíduo 7.8e-09)
+    |autovalores| de A (6 maiores): [1. 1. 1. 1. 1. 1.]
+    gamma = 0.876 | ordem = 19 | modos rápidos removidos = 1 | estável (linear) = True
+[4] malha fechada na planta MyoSuite ...
+    regulação (5 s em 0.68 s): RMSE(t>0,5 s) [φ θ ψ] = [0.8 1.7 0.9]°, final = [-1.2  3.2 20. ]°
+    degraus pequenos (6 s em 0.82 s): RMSE [φ θ ψ] = [1.6 1.  1. ]°
+    tremor 5 Hz — RMS [φ θ ψ]: PD+I voluntário = [1.  0.6 0.9]°, H∞ = [0.6 0.5 0.8]°  (redução [44. 26. 16.] %)
+pipeline completo em 12 s
+
+########## SINDYc: 78 coeficientes | fit val mín/méd = 89.2/93.9 % | erro rigidez vs MuJoCo = 65 %
+[3] equilíbrio (u_base=0.15) + linearização do SINDYc + síntese H-inf ...
+    u* = {'SUP': np.float64(0.138), 'ECRL': np.float64(0.227), 'ECRB': np.float64(0.232), 'ECU': np.float64(0.263), 'FCR': np.float64(0.135), 'FCU': np.float64(0.135), 'PQ': np.float64(0.169), 'PT': np.float64(0.164)}  (resíduo 2.5e-08)
+    |autovalores| de A (6 maiores): [0.9 1.  1.  1.  1.  1. ]
+    gamma = 0.850 | ordem = 19 | modos rápidos removidos = 1 | estável (linear) = True
+[4] malha fechada na planta MyoSuite ...
+    regulação (5 s em 5.92 s): RMSE(t>0,5 s) [φ θ ψ] = [0.3 0.4 0.1]°, final = [-0.5  4.5 19.8]°
+    degraus pequenos (6 s em 27.53 s): RMSE [φ θ ψ] = [1.2 0.7 0.7]°
+    tremor 5 Hz — RMS [φ θ ψ]: PD+I voluntário = [1.  0.6 0.9]°, H∞ = [0.6 0.4 0.6]°  (redução [39. 34. 39.] %)
+pipeline completo em 72 s

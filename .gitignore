@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Dados brutos de identificação (grandes e reproduzíveis: os experimentos têm semente fixa).
+# Modelos identificados (.npz pequenos), controladores e figuras SÃO versionados.
+results/**/idtf_*.npz
+results/**/idtf_*.pkl
+results/**/tremor_run.pkl
+
+# SO / editores
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

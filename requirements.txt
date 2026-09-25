@@ -1,0 +1,9 @@
+# Testado com Python 3.13 (Windows 11)
+myosuite==2.12.2
+mujoco==3.6.0
+gymnasium==1.2.3
+numpy==2.5.3
+scipy==1.18.1
+matplotlib==3.11.2
+control==0.10.2
+slycot==0.7.0
