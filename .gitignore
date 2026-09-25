@@ -17,3 +17,7 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+
+# vídeo: dados da simulação (reproduzíveis) e cópia do controlador usada pelo script 07
+results/**/video/tremor_5Hz_10s.npz
+results/**/video/controller_hinf_3dof.npz

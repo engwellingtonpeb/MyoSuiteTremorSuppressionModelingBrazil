@@ -6,6 +6,24 @@ Modelagem e controle da dinâmica direta do punho no **MyoSuite/MuJoCo**, visand
 
 > planta musculoesquelética → identificação (DMDc / **SINDYc**) → síntese **H∞** (mixsyn) → malha fechada → perturbação de tremor
 
+## Vídeo: tremor de 5 Hz nos três planos anatômicos (10 s)
+
+![tremor de 5 Hz nos planos sagital, frontal e transversal](results/wrist3dof_openloop_palmdown/video/tremor_5Hz_10s_3planos.gif)
+
+A mão começa na postura com a palma para baixo (θ = ψ = 0°, φ = 80°), sustentada pelo controlador H∞. Em
+**t = 1 s** entra a perturbação senoidal de 5 Hz: excitação alternada entre flexores e extensores e entre
+pronadores e supinador. O painel inferior mostra θ, ψ e φ medidos a partir do ponto de operação. O tremor resultante
+na planta tem 1,8° pico a pico em θ, 0,3° em φ e 0,3° em ψ.
+
+Os vídeos em MP4 (30 fps) estão em [results/wrist3dof_openloop_palmdown/video/](results/wrist3dof_openloop_palmdown/video/):
+
+| vídeo | conteúdo |
+|---|---|
+| [tremor_5Hz_10s_3planos.mp4](results/wrist3dof_openloop_palmdown/video/tremor_5Hz_10s_3planos.mp4) | 3 vistas + traços de θ, ψ, φ |
+| [tremor_5Hz_10s_sagital.mp4](results/wrist3dof_openloop_palmdown/video/tremor_5Hz_10s_sagital.mp4) | plano sagital (vista lateral) |
+| [tremor_5Hz_10s_frontal.mp4](results/wrist3dof_openloop_palmdown/video/tremor_5Hz_10s_frontal.mp4) | plano frontal (vista anterior) |
+| [tremor_5Hz_10s_transversal.mp4](results/wrist3dof_openloop_palmdown/video/tremor_5Hz_10s_transversal.mp4) | plano transversal (vista superior) |
+
 ![condição inicial](results/wrist3dof_openloop_palmdown/vista_condicao_inicial.png)
 
 ## Notação dos graus de liberdade
@@ -37,6 +55,7 @@ docs/NOTAS_TECNICAS.md  decisões de projeto, diagnósticos, artefatos do modelo
 | `04_wrist3dof_compare_dmdc_sindyc.py` | [histórico] mesma síntese H∞ a partir do DMDc e do SINDYc | `results/wrist3dof_closedloop_id/` |
 | **`05_wrist3dof_openloop_palmdown.py`** | **[atual]** palma para baixo: (1) SINDYc em **malha aberta**, (2) síntese H∞, (3) rastreamento, (4) tremor de 5 Hz | `results/wrist3dof_openloop_palmdown/` |
 | `06_visualize.py` | condição inicial em PNG; `--gif` anima o tremor; `--interactive` abre o viewer do MuJoCo | `results/wrist3dof_openloop_palmdown/` |
+| `07_tremor_video.py` | tremor básico de 5 Hz por 10 s: vídeos nos planos sagital, frontal e transversal, mais o composto e o GIF | `results/wrist3dof_openloop_palmdown/video/` |
 
 ## Instalação
 
@@ -51,6 +70,7 @@ python -m venv .venv
 .venv\Scripts\python scripts/05_wrist3dof_openloop_palmdown.py
 .venv\Scripts\python scripts/05_wrist3dof_openloop_palmdown.py --control-only
 .venv\Scripts\python scripts/06_visualize.py --gif
+.venv\Scripts\python scripts/07_tremor_video.py
 ```
 
 O pipeline completo do script 05 leva ~5 min, a maior parte na esparsificação do SINDYc. Com `--control-only`,

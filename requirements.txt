@@ -7,3 +7,5 @@ scipy==1.18.1
 matplotlib==3.11.2
 control==0.10.2
 slycot==0.7.0
+imageio==2.37.4
+imageio-ffmpeg==0.6.0
